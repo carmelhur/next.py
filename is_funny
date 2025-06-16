@@ -1,0 +1,1 @@
+def is_funny(string): return set(string) <= {'h', 'a'}
