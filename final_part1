@@ -1,0 +1,10 @@
+names = open("names.txt").read().splitlines()
+print("The longest name is:", max(names, key=len))
+print(sum(len(name) for name in names))
+min_length = min(len(name) for name in names)
+shortest_names = [name for name in names if len(name) == min_length]
+print('\n'.join(shortest_names))
+lengths = [str(len(name)) for name in names]
+open("name_length.txt", "w").write('\n'.join(lengths))
+intname = input("write length of name")
+print('\n'.join([name for name in names if len(name) == int(intname)]))
