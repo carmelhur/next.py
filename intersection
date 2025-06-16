@@ -1,0 +1,2 @@
+def intersection(list_1, list_2):
+    return [x for x in list_1 if x in list_2 and list_1.index(x) == list_1.index(x)]
