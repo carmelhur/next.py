@@ -1,0 +1,5 @@
+def repeat_twice(c):
+    return c * 2
+
+def double_letter(my_str):
+    return ''.join(map(repeat_twice, my_str))
