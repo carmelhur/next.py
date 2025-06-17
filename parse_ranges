@@ -1,0 +1,4 @@
+def parse_ranges(ranges_string):
+    return (num
+            for part in ranges_string.split(',')
+            for num in range(int(part.split('-')[0]), int(part.split('-')[1]) + 1))
