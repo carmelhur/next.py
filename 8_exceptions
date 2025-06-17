@@ -1,0 +1,42 @@
+def throw_stop_iteration():
+    raise StopIteration
+
+def throw_zero_division():
+    x = 1 / 0
+
+def throw_assertion_error():
+    assert False
+
+def throw_import_error():
+    import something_that_does_not_exist
+
+def throw_key_error():
+    d = {}
+    x = d['key']
+
+def throw_syntax_error():
+    eval("if True print('hi')")
+
+def throw_indentation_error():
+    exec("def f():\nprint('bad')")
+
+def throw_type_error():
+    x = 'a' + 1
+
+
+funcs = [
+    throw_stop_iteration,
+    throw_zero_division,
+    throw_assertion_error,
+    throw_import_error,
+    throw_key_error,
+    throw_syntax_error,
+    throw_indentation_error,
+    throw_type_error
+]
+
+for f in funcs:
+    try:
+        f()
+    except Exception as e:
+        print(f"{f.__name__}: {type(e).__name__}")
