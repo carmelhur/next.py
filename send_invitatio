@@ -1,0 +1,17 @@
+class UnderAge(Exception):
+    def __init__(self, age):
+        self.age = age
+
+    def __str__(self):
+        years_left = 18 - self.age
+        return f"Your age ({self.age}) is under 18. You can come in {years_left} years."
+
+
+def send_invitation(name, age):
+    try:
+        age = int(age)
+        if age < 18:
+            raise UnderAge(age)
+        print("You should send an invite to " + name)
+    except UnderAge as e:
+        print(e)
